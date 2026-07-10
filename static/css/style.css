@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom Color Schemes and Overrides */
+.custom-nav, .custom-footer-bg {
+    background: linear-gradient(to right, #b2ca8e, #4CDC9D, #3C41D9);
+}
+
+.copyright {
+    background: linear-gradient(to right, #439954, #3C41D9);
+}
+
+.logo {
+    mix-blend-mode: multiply;
+}
+
+.mix-multiply {
+    mix-blend-mode: multiply;
+}
+
+/* Nav Link Animation Hooks */
+.nav_links .nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav_links .nav-link:hover {
+    color: #a1d1db !important;
+}
+
+.nav_links .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #a1d1db;
+    bottom: 0;
+    left: 50%;
+    transition: all 0.3s ease;
+}
+
+.nav_links .nav-link:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Hero Segment adjustments */
+.hero-section {
+    height: 80vh;
+}
+
+.bg-image {
+    object-fit: cover;
+}
+
+.max-height-400 {
+    max-height: 400px;
+}
+
+/* Underline Headers */
+.section-title h1::before {
+    content: '';
+    left: 30%;
+    position: absolute;
+    height: 3px;
+    right: 30%;
+    background-color: #50c5fc;
+    bottom: -5px;
+}
+
+.border-bottom-yellow::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: #ffeb3b;
+}
+
+/* Team Component Overlays */
+.team {
+    background: #f3f4fa;
+    transition: transform 0.3s ease-in-out;
+}
+
+.team:hover {
+    transform: translateY(-5px);
+}
+
+.team-social {
+    background: rgba(255, 255, 255, 0.85);
+    transition: all 0.3s ease-in-out;
+}
+
+.team:hover .team-social {
+    opacity: 1 !important;
+}
+
+.team-social a {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+}
+
+.team-social a.social-fb { background-color: #3b5998; }
+.team-social a.social-li { background-color: #0e76a8; }
+.team-social a.social-in { background-color: #3f729b; }
+.team-social a.social-git { background-color: #214461; }
+
+.team-social a:hover {
+    background-color: #222222 !important;
+}
+
+/* Global Footer Helpers */
+.hover-yellow:hover {
+    color: #ffeb3b !important;
+}
+.services_section{
+    margin-top: 100px !important;
+}
+
+/* --- FIXED CSS SECTION --- */
+
+.recycle-img {
+    max-height: 450px;
+    width: 100%;
+    object-fit: contain;
+}
+
+.service-card {
+    background: transparent;
+    border-radius: 0px;
+    padding: 10px;
+    box-shadow: none;
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-2px);
+}
+
+.service-card h4 {
+    color: #198754;
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.service-card p {
+    color: #4a4a4a;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}

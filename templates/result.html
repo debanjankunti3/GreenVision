@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>GreenVision Result</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style2.css') }}">
+</head>
+
+<body>
+
+    <section class="result-section">
+
+        <div class="result-container">
+
+            <!-- LEFT BOX -->
+
+            <div class="result-card">
+
+                <h2>Uploaded/Captured Image</h2>
+
+                <img src="{{ image_path }}" class="result-image">
+
+                <h3>Result of Waste Classification</h3>
+
+                <p>
+                    <strong>Prediction :</strong>
+                    {{ prediction }}
+                </p>
+
+                <p>
+                    <strong>Type of Waste :</strong>
+                    {{ waste_type }}
+                </p>
+
+                <p>
+                    <strong>Confidence Score :</strong>
+                    {{ confidence }}%
+                </p>
+
+                <button class="action-btn" onclick="showTips()">
+
+                    Show Disposal Tips
+
+                </button>
+
+            </div>
+
+
+            <!-- RIGHT BOX -->
+
+            <div class="tips-card" id="tipsBox">
+
+                <h2>What To Do</h2>
+
+                <img src="{{ bin_image }}" class="bin-image">
+
+                <h3>
+                    Throw it to the
+                    {{ bin_name }}
+                </h3>
+
+                <p>
+                    {{ disposal_tip }}
+                </p>
+
+                <a href="{{ url_for('classifier') }}">
+                    <button class="action-btn">
+                        Back to Classifier
+                    </button>
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <script>
+
+        function showTips() {
+            document.getElementById("tipsBox").style.display = "block";
+        }
+
+    </script>
+
+</body>
+
+</html>
