@@ -166,3 +166,15 @@ html {
     font-size: 0.95rem;
     line-height: 1.5;
 }
+/* Custom Interaction Classes */
+.hover-yellow:hover {
+    color: #ffc107 !important; /* Changes text color to Bootstrap Yellow on hover */
+}
+
+.hover-scale-1 {
+    transition: transform 0.2s ease-in-out; /* Makes the scaling movement smooth */
+}
+
+.hover-scale-1:hover {
+    transform: scale(1.03); /* Lifts and enlarges the header slightly */
+}

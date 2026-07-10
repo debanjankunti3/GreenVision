@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, url_for
+from flask import Flask, redirect, render_template, request, url_for
 import tensorflow as tf
 import numpy as np
 from PIL import Image
@@ -214,7 +214,27 @@ def predict():
             filename=bin_image
         )
     )
+from flask import flash, redirect, render_template, request, url_for
 
+
+@app.route("/suggestions", methods=["GET", "POST"])
+def suggestions():
+    if request.method == "POST":
+        # Extract data from the HTML form 'name' attributes
+        name = request.form.get("name")
+        email = request.form.get("email")
+        category = request.form.get("category")
+        message = request.form.get("message")
+
+        # Log it directly to your running terminal window
+        print(
+            f"--- NEW SUGGESTION ---\nName: {name}\nEmail: {email}\nCategory: {category}\nMessage: {message}"
+        )
+
+        return redirect(url_for("suggestions"))
+
+    return render_template("suggestions.html")
+    
 if __name__ == "__main__":
     app.run(debug=True)
     
